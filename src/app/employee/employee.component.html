@@ -1,0 +1,59 @@
+<div class="table-responsive mt-50">
+    <table class="table table-striped table-bordered table-hover" style="width: 80%; margin-left: 40px;">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employeeList">
+                <td> {{emp.id}} </td>
+                <td> {{emp.firstName}} </td>
+                <td> {{emp.lastName}} </td>
+                <td> {{emp.age}} </td>
+                <td> {{emp.email}} </td>
+                <td><a (click)="onDel(empl=emp)" class="btn btn-outline-dark a-btn-slide-text"><span>Delete</span></a></td>
+                <td><a (click)="onUpdate(empl=emp)" class="btn btn-outline-dark a-btn-slide-text"><span>Update</span></a></td>
+                <td><a (click)="onDetails(empl=emp)" class="btn btn-outline-dark a-btn-slide-text"><span>View</span></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="onAdd()" class="btn btn-primary Add"><span>Add Employee</span></button>
+</div>
+<form *ngIf="details" class="form-inline" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <div>
+        <div style="width: 15%; margin-top: 20px; margin-left: 30px;">
+            <h2 class="head2">{{ heading }}</h2>
+            <div class="form-group mb-10">
+                <label for="empId">Employee Id</label>
+                <input class="form-control" placeholder="Employee Id" formControlName="empId" />
+            </div>
+            <div class="form-group mb-10">
+                <label for="firstname">First Name</label>
+                <input class="form-control" placeholder="First name" formControlName="firstname" />
+            </div>
+            <div class="form-group mb-10">
+                <label for="lastname">Last Name</label>
+                <input class="form-control" placeholder="Last Name" formControlName="lastname" />
+            </div>
+            <div class="form-group mb-10">
+                <label for="age">Age</label>
+                <input class="form-control" placeholder="Age" formControlName="age" />
+            </div>
+            <div class="form-group mb-10">
+                <label for="email">Email</label>
+                <input class="form-control" placeholder="Email" formControlName="email" />
+            </div>
+            <button class="btn btn-default btn-primary ml" type="submit" [disabled]="form.invalid">
+                Save
+            </button>
+        </div>
+    </div>
+</form>

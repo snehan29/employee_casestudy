@@ -1,0 +1,42 @@
+.mt-50{
+    margin-top: 100px;
+}
+
+.Add{
+    margin-left: 1450px;
+}
+
+.back {
+    width: 400px;
+    height: 300px;
+    background-color: aliceblue;
+    margin: auto;
+    padding: 10px;
+}
+
+.head2{
+    color: navy;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.components {
+    margin: 20px 0 10px 0;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.banner {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.formMargin {
+    margin-top: 250px;
+}
+
+.ml{
+    margin-left: 210px;
+    margin-top: 10px;
+}
